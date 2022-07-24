@@ -1,0 +1,76 @@
+https://github.com/fch-bsp/gitops-certification-examples
+
+
+
+argocd app create api-demo \
+--project default \
+--repo https://github.com/fch-bsp/gitops-certification-examples \
+--path "./simple-app" \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc
+
+
+argocd app create demo \
+--project default \
+--repo https://github.com/fch-bsp/gitops-certification-examples  \
+--path "./secret-app/manifests" \
+--dest-namespace kube-system \
+--dest-server https://kubernetes.default.svc
+
+
+argocd app create 3-apps \
+--project default \
+--repo https://github.com/codefresh-contrib/gitops-certification-examples  \
+--path "./helm-app/" \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc
+
+
+argocd app create helm-gitops-example \
+--project default \
+--repo  https://github.com/codefresh-contrib/gitops-certification-examples  \
+--path "./declarative/multiple-apps" \
+--dest-namespace argocd \
+--dest-server https://kubernetes.default.svc
+
+--------
+
+argocd app create demo \
+--project default \
+--repo https://github.com/codefresh-contrib/gitops-certification-examples \
+--path "./helm-app/" \
+--sync-policy auto \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc
+
+---
+
+
+
+
+https://github.com/codefresh-contrib/gitops-certification-examples
+
+argocd app list
+argocd app get demo
+argocd app history demo
+
+
+
+comandos 
+
+argocd
+
+
+
+A implantação de novas versões de seu aplicativo com um alto grau de confiança é uma meta desejável, pois obter recursos de forma confiável para produção é uma das características mais importantes das organizações em rápida evolução
+
+
+argocd app sync demo
+argocd app wait demo
+
+
+
+kubectl scale --replicas=3 deployment simple-deployment
+
+kubectl scale --replicas=3 deployment simple-deployment
+kubectl get deployment simple-deployment
