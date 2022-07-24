@@ -70,6 +70,22 @@ argocd app create demo \
 --dest-server https://kubernetes.default.svc
 
 
+app blue0green
+
+argocd app create argo-rollouts-controller \
+--project default \
+--repo https://github.com/codefresh-contrib/gitops-certification-examples \
+--path ./argo-rollouts-controller \
+--sync-policy auto \
+--dest-namespace argo-rollouts \
+--dest-server https://kubernetes.default.svc
+
+argocd app create demo \
+--project default \
+--repo https://github.com/codefresh-contrib/gitops-certification-examples \
+--path ./blue-green-app \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc
 
 
 argocd app list
