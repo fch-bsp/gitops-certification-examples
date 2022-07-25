@@ -2,7 +2,7 @@ https://github.com/fch-bsp/gitops-certification-examples
 
 
 
-argocd app create api-demo \
+argocd app demo \
 --project default \
 --repo https://github.com/fch-bsp/gitops-certification-examples \
 --path "./simple-app" \

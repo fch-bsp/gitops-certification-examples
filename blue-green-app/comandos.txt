@@ -1,0 +1,9 @@
+app- blue-green 
+
+argocd app create argo-rollouts-controller \
+--project default \
+--repo  https://github.com/fch-bsp/gitops-certification-examples \
+--path "./argo-rollouts-controller" \
+--sync-policy auto \
+--dest-namespace argo-rollouts \
+--dest-server https://kubernetes.default.svc
