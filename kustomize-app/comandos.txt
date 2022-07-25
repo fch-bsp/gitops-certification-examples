@@ -1,0 +1,18 @@
+app- Kustumize
+
+argocd app create kustomize-gitops-example \
+--project default \
+--repo https://github.com/fch-bsp/gitops-certification-examples \
+--path "./kustomize-app/overlays/staging" \
+--sync-policy auto \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc
+
+
+argocd app create demo \
+--project default \
+--repo https://github.com/fch-bsp/gitops-certification-examples \
+--path ./kustomize-app/overlays/staging \
+--sync-policy auto \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc

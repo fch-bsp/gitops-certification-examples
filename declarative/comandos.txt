@@ -1,0 +1,9 @@
+app demo 1,2,3
+
+argocd app create 3-apps \
+--project default \
+--repo  https://github.com/fch-bsp/gitops-certification-examples \
+--path "./declarative/multiple-apps" \
+--sync-policy auto \
+--dest-namespace argocd \
+--dest-server https://kubernetes.default.svc
