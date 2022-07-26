@@ -9,7 +9,7 @@ argocd app create helm-gitops-example \
 argocd app delete helm-gitops-example
 
 
-argocd app create demo \
+argocd app create demo1 \
 --project default \
 --repo https://github.com/fch-bsp/gitops-certification-examples \
 --path "./helm-app/" \
