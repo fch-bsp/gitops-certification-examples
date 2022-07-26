@@ -1,0 +1,10 @@
+
+
+
+argocd app create controller \
+--project default \
+--repo https://github.com/fch-bsp/gitops-certification-examples \
+--path "./bitnami-sealed-controller" \
+--sync-policy auto \
+--dest-namespace kube-system \
+--dest-server https://kubernetes.default.svc

@@ -1,0 +1,6 @@
+argocd app create helm-gitops-example \
+--project default \
+--repo https://github.com/fch-bsp/gitops-certification-examples  \
+--path "./helm-app/" \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc
