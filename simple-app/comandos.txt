@@ -7,7 +7,7 @@ argocd app create demo \
 
 
 
-argocd app create demo \
+argocd app create app-demo \
 --project default \
 --repo https://github.com/fch-bsp/gitops-certification-examples \
 --path "./simple-app" \
