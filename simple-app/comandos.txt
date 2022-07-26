@@ -4,3 +4,13 @@ argocd app create demo \
 --path "./secret-app/manifests" \
 --dest-namespace default \
 --dest-server https://kubernetes.default.svc
+
+
+
+argocd app create demo \
+--project default \
+--repo https://github.com/fch-bsp/gitops-certification-examples \
+--path "./simple-app" \
+--sync-policy auto \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc
