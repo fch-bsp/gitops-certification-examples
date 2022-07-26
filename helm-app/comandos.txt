@@ -4,3 +4,15 @@ argocd app create helm-gitops-example \
 --path "./helm-app/" \
 --dest-namespace default \
 --dest-server https://kubernetes.default.svc
+
+
+argocd app delete helm-gitops-example
+
+
+argocd app create demo \
+--project default \
+--repo https://github.com/fch-bsp/gitops-certification-examples \
+--path "./helm-app/" \
+--sync-policy auto \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc
